@@ -1,4 +1,4 @@
-
+'use strict';
 angular.module('myTestAppApp')
 	.controller("StoreCtrl",['$scope','$http',function($scope,$http){
 				// $scope.products = gem;
@@ -7,6 +7,7 @@ angular.module('myTestAppApp')
 				// we need to pass this in to http 
 				// and get http back out of is.
 				// now we can use http.get
+				// concat api data in here. 
 				$http.get("public/gemsApi.json").success(function(data){
 					console.log(data)
 					$scope.products = data
@@ -35,3 +36,7 @@ angular.module('myTestAppApp')
 			this.review = {}
 		}
 	})
+
+	//foursquare api controller. 
+	// pass in credidentials
+	// try credentials on foursqaure first.

@@ -31,7 +31,10 @@ angular
         templateUrl: 'views/flatLand.html',
         controller:'StoreCtrl'
       })
-
+      .when("/foursquare",{
+        templateUrl: 'views/foursquare.html',
+        controller:'attractionCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
