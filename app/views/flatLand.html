@@ -1,0 +1,49 @@
+<div ng-controller="StoreCtrl">
+	<ul class="list-group">
+		<li ng-repeat="product in products">
+			<h3 ng-include="'product-title.html'">
+
+			</h3>	
+			<section ng-controller="PanelCtrl">
+				<ul class="nav nav-pills">
+					<li ng-class="{active:isSelected(1)}"> 
+						<a href ng-click="selectTab(1)">Description</a>
+					</li>
+					<li ng-class="{active:isSelected(2)}"> 
+						<a href ng-click="selectTab(2)">Specfications</a>
+					</li>
+					<li ng-class="{active:isSelected(3)}"> 
+						<a href ng-click="selectTab(3)">Reviews</a>
+					</li>
+				</ul>	
+				<div class="panel" ng-show="isSelected(1)">
+					<h4> description</h4>
+					<p>{{product.description}}</p>
+				</div>
+				<div class="panel" ng-show="isSelected(2)">
+					<h4> specfications</h4>
+					<p>something</p>
+				</div>	
+				<div class="panel" ng-show="isSelected(3)">
+					<form name="reviewform" ng-controller="ReviewCtrl" ng-submit="addReview(product)"> 
+						<blockquote>
+							<b>Stars: {{review.stars}}	</b>
+							{{review.body}}
+							<cite>by:{{review.author}}</cite>
+						</blockquote>
+						<select ng-model="review.stars">
+							<option value="1">1 star</option>
+							<option value="2">2 stars</option>
+							<option value="3">3 stars</option>
+						</select>
+						<textarea ng-model="review.body"></textarea>
+						<label>by:</label>
+						<input ng-model="review.auther" type="email"></input>
+						<input type="submit" value="Submit"></input>
+					</form>
+				</div>	
+				{{tab}}
+			</section>	
+		</li>
+	</ul>	
+</div>

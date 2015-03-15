@@ -1,0 +1,16 @@
+ [
+				{
+					"name": "Dodecahedron",
+					"price": 2.95,
+					"description": "....",
+					"canPurchase": false,
+					"reviews":[]
+				},
+				{
+					"name": "asdojfsad;lasdk",
+					"price": 50000,
+					"description": "pooooooo",
+					"canPurchase": true,
+					"reviews":[]
+				}
+		]
