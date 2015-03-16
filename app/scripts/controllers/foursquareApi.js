@@ -40,6 +40,8 @@ angular.module("myTestAppApp")
 			console.log("query.atttraction",attraction)
 			$http.get(foursquareUrl+"&near="+city+"&query="+attraction).success(function(data){
 				console.log(data)
+
+				// use explore to get groups which includes photos
 				// $scope.products = data
 			})
 		}
