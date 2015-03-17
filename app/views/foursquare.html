@@ -2,7 +2,7 @@
   <h1>foursquare Stuff</h1>
 </div>
 
-<div class="row marketing" ng-controller="attractionCtrl">
+<div class="row marketin" ng-controller="attractionCtrl">
   <div class="col-md-6">
     <ul class="list-group" ng-repeat="location in savedLocations">
       <li>
@@ -14,15 +14,17 @@
     </ul>
     <form name="reviewform" ng-controller="FoursquareCtrl" ng-submit="submitRequest(location)"> 
       <input type="text" ng-model="attractionType" placeholder="chooseAttraction"></input>
-      <input type="text" ng-model="city" placeholder="chooseCity"></input>
+      <input type="text" ng-model="city" placeholder="chooseCity" id="geocodeCity"></input>
       <input type="submit" value="Submit"></input>
     </form>
   </div>
-  <div class="col-md-6">
+  <div class="col-md-6" id="common-max-height">
     <h2> results </h2>
     <div ng-repeat="attraction in savedAttractions">
       <h4>{{attraction.attractionName}}</h4>
-      <img src="{{attraction.attractionImagePrefix}}400x400{{attraction.attractionImageSuffix}}">
+      <img src="{{attraction.attractionImagePrefix}}400x300{{attraction.attractionImageSuffix}}">
+      <p>{{attraction.attractionOpeningTimes}}
+      <hr>
     </div>
   </div>
 </div>
