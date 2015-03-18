@@ -46,7 +46,7 @@ angular.module("myTestAppApp")
 		// $scope.submitRequest()
 		// make request
 	})					// name            // dependencies
-	.controller("googleMapsController",["$scope","$http","MAPOPTIONS"],function($scope,$http,MAPOPTIONS){
+	.controller("googleMapsCtrl",["$scope","$http","MAPOPTIONS"],function($scope,$http,MAPOPTIONS){
 		  $scope.createMap = function(){
 	      if(MAPOPTIONS.map_container != undefined){
 	        window.map = new google.maps.Map(MAPOPTIONS.map_container, MAPOPTIONS) 
@@ -91,6 +91,7 @@ angular.module("myTestAppApp")
 		$scope.foursquare = function(attraction,city){
 			console.log("query.atttraction",attraction)
 			$http.get(foursquareUrl+"&near="+city+"&query="+attraction+"&venuePhotos=1").success(function(data){
+				console.log("FOURSQUARE ATTRACTIONS",$scope.foursquareAttractions)
 				$scope.foursquareAttractions = data.response["groups"][0].items
 				// $scope.createMap(); // NEED TO PASS IN LAT POINTS ENTERED FROM USER.
 				console.log($scope.foursquareAttractions);
